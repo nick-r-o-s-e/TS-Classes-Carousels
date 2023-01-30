@@ -1,0 +1,122 @@
+body {
+  background-color: #004a57;
+  background-image: url("https://www.transparenttextures.com/patterns/argyle.png");
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.expanded-div {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 99;
+}
+
+.expanded-img {
+  position: absolute;
+  width: 65%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  box-shadow: 0 0 300px 2000px rgba(0, 0, 0, 0.63);
+  border-radius: 0.5rem;
+}
+
+.expanding-btn {
+  position: absolute;
+  top: 1em;
+  left: 50%;
+  translate: -50%;
+  height: fit-content;
+  padding: 0;
+  line-height: 0%;
+  background-color: transparent;
+  border: none;
+
+  i {
+    font-size: 2em;
+    color: #fff;
+    transition: all linear 0.1s;
+    &:hover {
+      font-size: 2.3em;
+    }
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 80px 30px 270px;
+  .carousel {
+    margin-bottom: 40px;
+
+    &.previews-carousel {
+      margin-bottom: 140px;
+    }
+    .control:after {
+      content: none;
+    }
+    .carousel-control-next {
+      margin-right: 1.5rem;
+    }
+    .carousel-control-prev {
+      margin-left: 1.5rem;
+    }
+    .carousel-indicators {
+    }
+
+    .previews {
+      display: block;
+      margin-left: 50%;
+      translate: -50%;
+      width: max-content;
+      height: 100px;
+
+      width: 130%;
+      display: flex;
+      place-content: space-between;
+      margin-bottom: -8em;
+      .preview-btn {
+        width: 20%;
+        height: fit-content;
+        background-color: transparent;
+      }
+    }
+
+    .carousel-indicators .active {
+      opacity: 1;
+    }
+    .indicator-btn {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      border: 3px solid rgba(0, 0, 0, 0.459);
+      opacity: 0.6;
+    }
+  }
+}
+@media screen and (max-width: 990px) {
+  .indicator-btn {
+    height: 0.7rem;
+    width: 0.7rem;
+  }
+  .previews {
+    width: 120%;
+    margin-bottom: -7em;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .expanding-btn i {
+    font-size: 1.3em;
+  }
+  .carousel.previews-carousel {
+    margin-bottom: 70px !important;
+  }
+  .expanded-img {
+    width: 85%;
+  }
+}
